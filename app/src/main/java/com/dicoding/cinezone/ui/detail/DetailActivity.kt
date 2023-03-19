@@ -4,10 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
-import com.bumptech.glide.Glide
 import com.dicoding.cinezone.R
 import com.dicoding.cinezone.core.domain.model.Movie
 import com.dicoding.cinezone.databinding.ActivityDetailBinding
+import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
@@ -29,15 +29,18 @@ class DetailActivity : AppCompatActivity() {
             val vote = data.voteAverage * 10
             val voteResult = vote.toInt()
 
-            Glide.with(this@DetailActivity)
-                .load(data.backdropPath)
-                .centerCrop()
-                .into(binding.ivBackdrop)
+            Picasso.get().load(data.backdropPath).into(binding.ivBackdrop)
+            Picasso.get().load(data.posterPath).into(binding.ivPoster)
 
-            Glide.with(this@DetailActivity)
-                .load(data.posterPath)
-                .centerCrop()
-                .into(binding.ivPoster)
+//            Glide.with(this@DetailActivity)
+//                .load(data.backdropPath)
+//                .centerCrop()
+//                .into(binding.ivBackdrop)
+//
+//            Glide.with(this@DetailActivity)
+//                .load(data.posterPath)
+//                .centerCrop()
+//                .into(binding.ivPoster)
 
             binding.apply {
                 progressBar.progress = voteResult

@@ -1,0 +1,22 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.CineZone" parent="Theme.AppCompat.DayNight">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+<!--        <item name="colorSecondary">@color/teal_200</item>-->
+<!--        <item name="colorSecondaryVariant">@color/teal_200</item>-->
+<!--        <item name="colorOnSecondary">@color/black</item>-->
+        <!-- Status bar color. -->
+<!--        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>-->
+        <!-- Customize your theme here. -->
+<!--        <item name="android:actionBarTheme">@color/ac_bar</item>-->
+        <item name="android:backgroundTint">@color/bg</item>
+    </style>
+
+    <style name="fab_color">
+        <item name="android:backgroundTint">@color/green</item>
+    </style>
+</resources>

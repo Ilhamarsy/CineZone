@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+apply from: '../shared_dependencies.gradle'
+
+android {
+    namespace 'com.dicoding.cinezone'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.dicoding.cinezone"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+        freeCompilerArgs += [
+                "-Xopt-in=kotlin.RequiresOptIn"
+        ]
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    dynamicFeatures = [':favorite']
+}
+
+dependencies {
+    implementation project(":core")
+    api "androidx.navigation:navigation-fragment-ktx:2.5.3"
+    api "androidx.navigation:navigation-ui-ktx:2.5.3"
+    api "androidx.navigation:navigation-dynamic-features-fragment:2.5.3"
+}

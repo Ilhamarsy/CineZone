@@ -7,7 +7,6 @@ import androidx.core.content.ContextCompat
 import com.dicoding.cinezone.R
 import com.dicoding.cinezone.core.domain.model.Movie
 import com.dicoding.cinezone.databinding.ActivityDetailBinding
-import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
@@ -29,8 +28,8 @@ class DetailActivity : AppCompatActivity() {
             val vote = data.voteAverage * 10
             val voteResult = vote.toInt()
 
-            Picasso.get().load(data.backdropPath).into(binding.ivBackdrop)
-            Picasso.get().load(data.posterPath).into(binding.ivPoster)
+//            Picasso.get().load(data.backdropPath).into(binding.ivBackdrop)
+//            Picasso.get().load(data.posterPath).into(binding.ivPoster)
 
 //            Glide.with(this@DetailActivity)
 //                .load(data.backdropPath)

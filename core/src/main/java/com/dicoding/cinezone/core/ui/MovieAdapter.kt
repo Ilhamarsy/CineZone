@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.cinezone.core.R
 import com.dicoding.cinezone.core.databinding.ItemListBinding
 import com.dicoding.cinezone.core.domain.model.Movie
-import com.squareup.picasso.Picasso
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ListViewHolder>() {
 
@@ -33,7 +32,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ListViewHolder>() {
             val vote = data.voteAverage * 10
             val voteResult = vote.toInt()
             with(binding) {
-                Picasso.get().load(data.posterPath).into(ivItemImage)
+//                Picasso.get().load(data.posterPath).into(ivItemImage)
 //                Glide.with(itemView.context)
 //                    .load(data.posterPath)
 //                    .into(ivItemImage)

@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.dicoding.cinezone.core.R
 import com.dicoding.cinezone.core.databinding.ItemListBinding
 import com.dicoding.cinezone.core.domain.model.Movie
@@ -33,9 +34,9 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ListViewHolder>() {
             val voteResult = vote.toInt()
             with(binding) {
 //                Picasso.get().load(data.posterPath).into(ivItemImage)
-//                Glide.with(itemView.context)
-//                    .load(data.posterPath)
-//                    .into(ivItemImage)
+                Glide.with(itemView.context)
+                    .load(data.posterPath)
+                    .into(ivItemImage)
                 tvVote.text = voteResult.toString()
 
                 progressBar.progress = voteResult

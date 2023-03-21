@@ -33,7 +33,6 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ListViewHolder>() {
             val vote = data.voteAverage * 10
             val voteResult = vote.toInt()
             with(binding) {
-//                Picasso.get().load(data.posterPath).into(ivItemImage)
                 Glide.with(itemView.context)
                     .load(data.posterPath)
                     .into(ivItemImage)

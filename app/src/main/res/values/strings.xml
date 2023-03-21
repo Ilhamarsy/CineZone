@@ -17,4 +17,7 @@
     <string name="image_poster">Image Poster</string>
     <string name="search_movie">Search Movie</string>
     <string name="dark_mode">Dark Mode</string>
+
+    <string name="remove_favorite">Removed to Favorite</string>
+    <string name="add_favorite">Added to Favorite</string>
 </resources>

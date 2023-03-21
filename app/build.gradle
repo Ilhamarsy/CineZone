@@ -59,4 +59,7 @@ dependencies {
     api "androidx.navigation:navigation-fragment-ktx:2.5.3"
     api "androidx.navigation:navigation-ui-ktx:2.5.3"
     api "androidx.navigation:navigation-dynamic-features-fragment:2.5.3"
+
+    testImplementation "org.mockito:mockito-core:3.3.1"
+    testImplementation "org.mockito:mockito-inline:3.2.4"
 }

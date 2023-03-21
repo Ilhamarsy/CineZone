@@ -2,6 +2,7 @@ package com.dicoding.cinezone.ui.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
@@ -29,9 +30,6 @@ class DetailActivity : AppCompatActivity() {
             val vote = data.voteAverage * 10
             val voteResult = vote.toInt()
 
-//            Picasso.get().load(data.backdropPath).into(binding.ivBackdrop)
-//            Picasso.get().load(data.posterPath).into(binding.ivPoster)
-
             Glide.with(this@DetailActivity)
                 .load(data.backdropPath)
                 .centerCrop()
@@ -52,6 +50,13 @@ class DetailActivity : AppCompatActivity() {
             var statusFavorite = data.isFavorite
             setStatusFavorite(statusFavorite)
             binding.fab.setOnClickListener {
+                if (statusFavorite) {
+                    Toast.makeText(this, R.string.remove_favorite, Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+                    Toast.makeText(this, R.string.add_favorite, Toast.LENGTH_SHORT)
+                        .show()
+                }
                 statusFavorite = !statusFavorite
                 viewModel.setFavoriteMovie(data, statusFavorite)
                 setStatusFavorite(statusFavorite)
